@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { isError } from "react-query";
 
 const SuperHeros = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error,setError] = useState('')
 
   useEffect(() => {
 
@@ -11,12 +13,15 @@ const SuperHeros = () => {
 
     axios.get(url).then((res) => {
       setData(res.data);
+    }).catch((err) => {
+        setError(err.message)
     });
 
     setIsLoading(false);
   }, []);
 
   if (isLoading) return <h2>Loading...</h2>;
+  if(error) return <h2>{error}...</h2>;
 
   return (
     <>
