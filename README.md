@@ -42,3 +42,11 @@ Challenging when you have to deal with caching, deduping multiple request for th
 ## Axios Interceptors
 
 
+
+
+### Project Setup
+
+1- New react project using CRA.
+2- Setup and API endpoint theat serves mock data for use in our application.
+3- Setup react router and few routes in the application.
+4- Fetch data the traditional way using useEffect and useState.
