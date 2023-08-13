@@ -13,11 +13,11 @@ const SuperHeros = () => {
 
     axios.get(url).then((res) => {
       setData(res.data);
+      setIsLoading(false);
     }).catch((err) => {
         setError(err.message)
     });
 
-    setIsLoading(false);
   }, []);
 
   if (isLoading) return <h2>Loading...</h2>;
@@ -25,7 +25,7 @@ const SuperHeros = () => {
 
   return (
     <>
-      <h1>SuperHeros</h1>
+      <h1>Traditional - SuperHeros</h1>
       {
         data?.map((el)=>{
          return  <h4 key={el.name} >{el.name}</h4>
