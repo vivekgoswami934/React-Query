@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { isError } from "react-query";
 
 const SuperHeros = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +27,7 @@ const SuperHeros = () => {
       <h1>Traditional - SuperHeros</h1>
       {
         data?.map((el)=>{
-         return  <h4 key={el.name} >{el.name}</h4>
+         return  <h4 key={el.name} >{el.alterEgo}</h4>
         })
       }
     </>
